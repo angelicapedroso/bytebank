@@ -7,7 +7,14 @@ conta1.titular = "Angélica";
 conta1.conta = "18265-x";
 conta1.numeroAgencia = 55;
 conta1.nomeAgencia = "Agência xyz";
-conta1.saldo = 323;
+conta1.saldo = 100;
+
+ContaCorrente conta2 = new ContaCorrente();
+conta2.titular = "Letícia";
+conta2.conta = "10865-x";
+conta2.numeroAgencia = 55;
+conta2.nomeAgencia = "Agência xyz";
+conta2.saldo = 100;
 
 Console.WriteLine("Titular: " + conta1.titular);
 Console.WriteLine("Conta: " + conta1.conta);
@@ -15,11 +22,11 @@ Console.WriteLine("Número da agência: " + conta1.numeroAgencia);
 Console.WriteLine("Nome da agência: " + conta1.nomeAgencia);
 Console.WriteLine("Saldo: " + conta1.saldo);
 
-Pessoa pessoa1 = new Pessoa();
-
-Console.WriteLine(pessoa1.nome);
-Console.WriteLine(pessoa1.idade);
-Console.WriteLine(pessoa1.altura);
-Console.WriteLine(pessoa1.peso);
+Console.WriteLine("Saldo da Angélica pré-transferência: " + conta1.saldo);
+Console.WriteLine("Saldo da Letícia pré-transferência: " + conta2.saldo);
+bool transferencia = conta1.Transferir(50, conta2);
+Console.WriteLine("Transferência realizada com sucesso? " + transferencia);
+Console.WriteLine("Saldo da Angélica pós-transferência: " + conta1.saldo);
+Console.WriteLine("Saldo da Letícia pós-transferência: " + conta2.saldo);
 
 Console.ReadKey();
