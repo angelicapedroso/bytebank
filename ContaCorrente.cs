@@ -39,11 +39,22 @@ namespace bytebank
       {
         return false;
       }
-      else{
+      else
+      {
         saldo = saldo - valor;
         destino.saldo = destino.saldo + valor;
         return true;
       }
     }
+
+    public string ExibirDadosDaConta()
+    {
+      return "Titular: " + titular + "\n" +
+             "Conta: " + conta + "\n" +
+             "Número da agência: " + numeroAgencia + "\n" +
+             "Nome da agência: " + nomeAgencia + "\n" +
+             "Saldo: " + saldo;
+    }
+
   }
 }
