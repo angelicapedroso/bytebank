@@ -15,4 +15,11 @@ Console.WriteLine("Número da agência: " + conta1.numeroAgencia);
 Console.WriteLine("Nome da agência: " + conta1.nomeAgencia);
 Console.WriteLine("Saldo: " + conta1.saldo);
 
+Pessoa pessoa1 = new Pessoa();
+
+Console.WriteLine(pessoa1.nome);
+Console.WriteLine(pessoa1.idade);
+Console.WriteLine(pessoa1.altura);
+Console.WriteLine(pessoa1.peso);
+
 Console.ReadKey();
