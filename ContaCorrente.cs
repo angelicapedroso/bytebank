@@ -1,8 +1,10 @@
+using bytebank.Titular;
+
 namespace bytebank
 {
   public class ContaCorrente
   {
-    public string titular;
+    public Cliente titular;
     public string conta;
     public int numeroAgencia;
     public string nomeAgencia;
@@ -46,15 +48,5 @@ namespace bytebank
         return true;
       }
     }
-
-    public string ExibirDadosDaConta()
-    {
-      return "Titular: " + titular + "\n" +
-             "Conta: " + conta + "\n" +
-             "Número da agência: " + numeroAgencia + "\n" +
-             "Nome da agência: " + nomeAgencia + "\n" +
-             "Saldo: " + saldo;
-    }
-
   }
 }

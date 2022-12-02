@@ -1,13 +1,14 @@
 ﻿using bytebank;
+using bytebank.Titular;
 
 // Console.WriteLine("Boas-vindas ao ByteBank");
 
-ContaCorrente conta1 = new ContaCorrente();
-conta1.titular = "Angélica";
-conta1.conta = "18265-x";
-conta1.numeroAgencia = 55;
-conta1.nomeAgencia = "Agência xyz";
-conta1.saldo = 100;
+// ContaCorrente conta1 = new ContaCorrente();
+// conta1.titular = "Angélica";
+// conta1.conta = "18265-x";
+// conta1.numeroAgencia = 55;
+// conta1.nomeAgencia = "Agência xyz";
+// conta1.saldo = 100;
 
 // ContaCorrente conta2 = new ContaCorrente();
 // conta2.titular = "Letícia";
@@ -29,7 +30,21 @@ conta1.saldo = 100;
 // Console.WriteLine("Saldo da Angélica pós-transferência: " + conta1.saldo);
 // Console.WriteLine("Saldo da Letícia pós-transferência: " + conta2.saldo);
 
-string pessoa = conta1.ExibirDadosDaConta();
-Console.WriteLine(pessoa);
+Cliente cliente = new Cliente();
+
+// cliente.nome = "Angélica";
+// cliente.cpf = "123.456.789-10";
+// cliente.profissao = "Desenvolvedora C#";
+
+ContaCorrente conta3 = new ContaCorrente();
+conta3.titular = new Cliente();
+cliente.nome = "Angélica";
+cliente.cpf = "123.456.789-10";
+cliente.profissao = "Desenvolvedora C#";
+conta3.conta = "18265-x";
+conta3.numeroAgencia = 55;
+conta3.nomeAgencia = "Agência xyz";
+
+Console.WriteLine();
 
 Console.ReadKey();
