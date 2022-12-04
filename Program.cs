@@ -45,6 +45,8 @@ conta3.conta = "18265-x";
 conta3.numeroAgencia = 55;
 conta3.nomeAgencia = "Agência xyz";
 
-Console.WriteLine();
+conta3.DefinirSaldo(-10);
+
+// Console.WriteLine("Saldo: " + conta3.saldo);
 
 Console.ReadKey();
