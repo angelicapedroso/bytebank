@@ -1,6 +1,6 @@
 ## 🏦 ByteBank
 
-O ByteBank é um banco fictício que foi desenvolvido durante o curso de C# - Orientação a Objetos da Alura.
+O ByteBank é um banco fictício que foi desenvolvido durante o curso: C# - Orientação a Objetos da Alura.
 
 </br>
 
