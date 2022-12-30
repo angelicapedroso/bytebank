@@ -9,5 +9,6 @@ conta1.Titular.Profissao = "Desenvolvedor";
 conta1.Saldo = 1000;
 
 Console.WriteLine("Total de clientes: " + Cliente.TotalClientesCadastrados);
+Console.WriteLine("Taxa de operacação: " + ContaCorrente.TaxaOperacao);
 
 Console.ReadKey();

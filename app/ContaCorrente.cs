@@ -13,7 +13,7 @@ namespace bytebank
       {
         return _numeroAgencia;
       }
-      set
+      private set
       {
         if (value <= 0)
         {
@@ -63,6 +63,9 @@ namespace bytebank
         }
       }
     }
+
+    public static double TaxaOperacao { get; private set; }
+
     public bool Sacar(double valor)
     {
       if (_saldo < valor)
@@ -107,6 +110,9 @@ namespace bytebank
     {
       NumeroAgencia = numeroAgencia;
       Conta = conta;
+
+      TaxaOperacao = 30 / TotalDeContasCriadas;
+      
       TotalDeContasCriadas += 1;
     }
 
