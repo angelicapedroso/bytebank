@@ -7,24 +7,7 @@ namespace bytebank
     public Cliente Titular { get; set; } = new Cliente();
     public string NomeAgencia { get; set; } = "";
     private int _numeroAgencia;
-    public int NumeroAgencia
-    {
-      get
-      {
-        return _numeroAgencia;
-      }
-      private set
-      {
-        if (value <= 0)
-        {
-          return;
-        }
-        else
-        {
-          _numeroAgencia = value;
-        }
-      }
-    }
+    public int NumeroAgencia { get; }
     private string _conta = "";
     public string Conta
     {
@@ -108,10 +91,15 @@ namespace bytebank
 
     public ContaCorrente(int numeroAgencia, string conta)
     {
+      if (numeroAgencia <= 0)
+      {
+        throw new ArgumentException("O argumento numeroAgencia deve ser maior que 0.", nameof(numeroAgencia));
+      }
+
       NumeroAgencia = numeroAgencia;
       Conta = conta;
 
-      TaxaOperacao = 30 / TotalDeContasCriadas;
+      // TaxaOperacao = 30 / TotalDeContasCriadas;
       
       TotalDeContasCriadas += 1;
     }
