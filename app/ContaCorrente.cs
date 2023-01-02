@@ -6,7 +6,7 @@ namespace bytebank
   {
     public Cliente Titular { get; set; } = new Cliente();
     public string NomeAgencia { get; set; } = "";
-    private int _numeroAgencia;
+    // private int _numeroAgencia;
     public int NumeroAgencia { get; }
     private string _conta = "";
     public string Conta
@@ -49,21 +49,17 @@ namespace bytebank
 
     public static double TaxaOperacao { get; private set; }
 
-    public bool Sacar(double valor)
+    public void Sacar(double valor)
     {
-      if (_saldo < valor)
-      {
-        return false;
-      }
       if (valor < 0)
       {
-        return false;
+        throw new ArgumentException("Valor de saque não pode ser negativo", nameof(valor));
       }
-      else
+      if (_saldo < valor)
       {
-        _saldo = _saldo - valor;
-        return true;
+        throw new SaldoInsuficienteException("Saldo insuficiente para saque no valor de " + valor);
       }
+        _saldo = _saldo - valor;
     }
 
     public void Depositar(double valor)
@@ -71,21 +67,20 @@ namespace bytebank
       _saldo = _saldo + valor;
     }
 
-    public bool Transferir(double valor, ContaCorrente destino)
+    public void Transferir(double valor, ContaCorrente destino)
     {
-      if (_saldo < valor)
-      {
-        return false;
-      }
       if (valor < 0)
       {
-        return false;
+        throw new ArgumentException("Valor inválido para a transferência.", nameof(valor));
+      }
+      if (_saldo < valor)
+      {
+        throw new ArgumentException("Saldo inválido para a transferência.", nameof(_saldo));
       }
       else
       {
         _saldo = _saldo - valor;
         destino._saldo = destino._saldo + valor;
-        return true;
       }
     }
 
